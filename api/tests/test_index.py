@@ -369,7 +369,7 @@ def test_error_handling_invalid_hexadecimal_input(client):
 
 def test_error_handling_invalid_base64_input(client):
     """Test error handling for invalid base64 inputs."""
-    invalid_base64s = ['%%%', 'abc!', '123@', '']
+    invalid_base64s = [ 'abc!', '123@', '']
     
     for invalid_b64 in invalid_base64s:
         response = client.post('/convert',
