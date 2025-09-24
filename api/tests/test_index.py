@@ -380,6 +380,7 @@ def test_error_handling_invalid_base64_input(client):
                              }),
                              content_type='application/json')
         data = json.loads(response.data)
+        print(f"Testing input: '{invalid_b64}' -> result: {data['result']}, error: {data['error']}")
         assert data['result'] is None
         assert data['error'] is not None
         assert 'Invalid base64 input' in data['error']
