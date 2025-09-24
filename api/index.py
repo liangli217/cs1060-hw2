@@ -36,6 +36,9 @@ def number_to_text(number):
 def base64_to_number(b64_str):
     """Convert base64 to integer"""
     try:
+        # Check for empty string first
+        if not b64_str:
+            raise ValueError("Invalid base64 input")
         # Decode base64 to bytes, then convert bytes to integer
         decoded_bytes = base64.b64decode(b64_str)
         return int.from_bytes(decoded_bytes, byteorder='big')
